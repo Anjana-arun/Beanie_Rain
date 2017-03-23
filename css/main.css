@@ -1,5 +1,20 @@
+#canvas-container{
+	text-align: center;
+	position: relative;
+}
+
+
+#game_main{
+	background-color: green;
+	
+	top:0;
+	left: 0;
+	
+}
 #game_bg {
-
-background-color: #87cefa;
-
+margin: 40;
+background-color:#87cefa ;
+position: absolute;
+ top:.05;
+ left:20;
 }
