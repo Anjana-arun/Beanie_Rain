@@ -12,13 +12,40 @@
 
   bg_canvas.width = window.innerWidth;
   bg_canvas.height = window.innerHeight;
- 
-  for(i=0;i<10;i++){
+ //Create random clouds
+ function draw_clouds(){
+   for(i=0;i<5;i++){
      var x=(Math.random()*ctx.canvas.width)+1;
     var y=(Math.random()*ctx.canvas.height)+1;
     
     $cloudgen.drawCloud(ctx,x,y,80,{r:255,g:255,b:255},0.9);
 }
+}
+ function init() {
+        ctx.fillStyle = "Pink";
+        ctx.font = "100pt Ariel";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        step = 0;
+        steps = canvas.height /2;
+        RunTextRightToLeft();
+    }
+
+    function RunTextRightToLeft() {
+        step++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        draw_clouds();
+        ctx.save();
+        ctx.translate(canvas.width / 2, step);
+        ctx.fillText("Beanie Rain", 0, 0);
+        ctx.restore();
+        if (step == steps)
+            step = 0;
+        if (step < steps)
+            var t = setTimeout('RunTextRightToLeft()', 50);
+    }
+  init();
+
  // Game play on mouse clicks too!
   window.addEventListener('mousedown', function(e) {
     mit.ascend();
