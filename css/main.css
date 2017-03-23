@@ -4,14 +4,13 @@
 }
 
 
-#game_main{
+#game_bg{
 	background-color: green;
-	
 	top:0;
 	left: 0;
 	
 }
-#game_bg {
+#game_main {
 margin: 40;
 background-color:#87cefa ;
 position: absolute;
